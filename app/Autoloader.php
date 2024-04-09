@@ -24,15 +24,18 @@ namespace App;
       */
 
       static function autoload($class)
-      {
-
-        if (strpos($class, __NAMESPACE__. '\\') === 0)
-        {
-            $class = str_replace(__NAMESPACE__ . '\\', '', $class);
-            $class = str_replace('\\', '/', $class);
-            return __DIR__ . '/' . $class . '.php';
+{
+    if (strpos($class, __NAMESPACE__. '\\') === 0)
+    {
+        $class = str_replace(__NAMESPACE__ . '\\', '', $class);
+        $class = str_replace('\\', '/', $class);
+        $file = __DIR__ . '/' . $class . '.php';
+        if (file_exists($file)) {
+            require_once($file);
+        } else {
+            // Gérer le cas où le fichier de classe n'existe pas
         }
-
-      }
+    }
+}
 
  }

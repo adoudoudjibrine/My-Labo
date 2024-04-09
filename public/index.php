@@ -4,6 +4,12 @@ require '../app/Autoloader.php';
 
 App\Autoloaer::register();
 
+// Initialisation des objets
+require '../app/Database.php';
+
+
+
+
 if (isset($_GET['p']))
 {
     $p = $_GET['p'];
@@ -19,9 +25,9 @@ if ($p === 'home')
 {
     require '../pages/home.php' ;
 }
-elseif ($p === 'single')
+elseif ($p === 'article')
 {
-    require '../pages/single.php' ;
+    require '../pages/article.php' ;
 }
 
 $content = ob_get_clean();

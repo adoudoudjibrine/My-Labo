@@ -22,19 +22,45 @@ class Database
 
     private function getPDO()
     {
-        $pdo = new PDO('mysql:dbname=blog; host=localhost','root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->pdo = $pdo;
-        return $pdo;
-    }
+        if ($this->pdo === null)
+        {
+            $pdo = new PDO('mysql:dbname=blog; host=localhost','root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->pdo = $pdo;
+            // var_dump('PDO initialise called');
+        }
+        // var_dump('getPDO called');
+        return $this->pdo;
 
-    public function query($statement)
+    }
+ 
+    public function query($statement, $class_name)
     {
-        $stmt = $this->getPDO()->query($statement);
-        $data = $stmt->fetchAll(PDO::FETCH_OBJ);
-        return $data;
+        $req = $this->getPDO()->query($statement);
+        $datas = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
+        // var_dump($datas);die(); 
+        return $datas; 
     }
    
+    public function prepare($stmt, $attributes, $class_name, $one = false)
+    {
+        $req = $this->getPDO()->prepare($stmt);
+        $req->execute($attributes);
+        $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        if ($one)
+        {
+            $datas = $req->fetch();
+        }
+        else
+        {
+            $datas = $req->fetchAll();
+        }
+        
+        return $datas;
+    }
+
+
 }
 
-?>
+
+?> 
