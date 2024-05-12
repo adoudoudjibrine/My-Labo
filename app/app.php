@@ -4,21 +4,16 @@ namespace App;
 
 class App
 {
-    const DB_NAME = 'blog';
-    const DB_USER = 'root';
-    const DB_PASS = '';
-    const DB_HOST = 'localhost';
+    public $title = "Mon supper Site";
+    private static $_instance;
 
-    private static $database;
-
-    public static function getDb()
+    public static function getInstance()
     {
-        if(self::$database === null)
+        if(is_null(self::$_instance))
         {
-            self::$database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
+            self::$_instance = new App();
         }
 
-        return self::$database;
+        return self::$_instance;
     }
-
 }
