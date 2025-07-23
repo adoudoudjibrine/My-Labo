@@ -6,13 +6,13 @@ require ROOT .'/app/App.php'; // here we require the file Autoloader.php
 
 App::load(); // here we register the autoloader
 
-use App\Controller\PostsController; // here we import the PostsController class
+use App\Controller\EtudiantController; // here we import the PostsController class
 use App\Controller\Admin\UsersController;
 
 if(isset($_GET['p'])) { // here we check if the parameter p is set in the URL
     $page = $_GET['p']; // here we get the value of the parameter p
 } else {
-    $page = 'posts.index'; // here we set the default value of the parameter p to home
+    $page = 'etudiant.index'; // here we set the default value of the parameter p to home
 } 
 
 $page = explode('.', $page); // here we split the value of the parameter p into an array

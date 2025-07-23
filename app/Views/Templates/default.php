@@ -45,37 +45,102 @@ use App\App;
             </div>
         </nav>
     </div>
-
-    <div class="container-fluid">
-        <div class="starter-template" style="padding-top: 100px;">
-            <?= $content ?>
-        </div>
-    </div>
     <div class="row">
+        
+        <div class="col-3 m-3">
             <!--aside-->
-            <div class="col-3 list-group">
- 
+            <div class="list-group">
+
                 <a href="#" class="list-group-item list-group-item-action active">Aimeriez vous signalez une perte?  <i class=" icon-chevron-right icon-red offset3"></i></a>
                 <a href="#" class="list-group-item list-group-item-action">Objet ayant été rettouvé<i class=" icon-chevron-right icon-blue offset5"></i></a>
                 <a href="#" class="list-group-item list-group-item-action">Nos meilleur agents pouv vous aidé!!<i class=" icon-chevron-right offset3"></i> </a>
                 <a href="#"class="list-group-item list-group-item-action">Commentaires clients satisfaients..<i class=" icon-chevron-right offset3"></i></a>
                 <a href="#"class="list-group-item list-group-item-action">Rejoindre notre communauté?<i class=" icon-chevron-right offset4"></i></a>
-               
+            </div>
             <div class="login-form">
-        <h1 class="title">login here</h1>
+                <h1 class="title">login here</h1>
+                <form>
+                    <label>Username</label>
+                    <input type="text" >
+                    <label>Password</label>
+                    <input type="password">
+                    <input type="checkbox" >     
+                    <label>Remember me</label>         
+                    <button class="btn btn-primary ">login </button>
+                </form>
+            </div>
+        </div>  
+        <div class="col-7">
+            <div class="starter-template" style="padding: 10px;">
+                <?= $content ?>
+            </div>
+        </div>
+        <div class="col-2 ">
+            <label for="find">RECHERCHER</label>
+            <input class="form-control" id="search" type="text" placeholder="Search..">
+            <br>
+        </div>
 
-        <form>
-                <label>Username</label>
-                <input type="text" >
-                <label>Password</label>
-                <input type="password">
-                <br/> <input type="checkbox" >     <label>Remember me</label>         
-            <button class="btn btn-primary ">login </button>
-
-        </form>
-    </div>   
-</div>  
-
+        <div class="footer">
+            <footer class="pt-4 my-md-5 pt-md-5  text-white bg-dark border-top">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <h3>PUBLICATION THESE</h3>
+            
+                        <div class="copyright d-block mb-3 text-muted">
+                            &copy; Copyright<strong>Publication des Theses</strong>.   All Rights Reserved 
+                        </div>
+                        <div class="credits">
+                            Designed by<a href="#">Boss Workers Teams</a>
+                        </div>
+                        <p>
+            
+                        </p>
+            
+                    </div>
+                    <div class=" col-6 col-md">
+                        <h2>Useful Links</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"> ACCUEIL</i></a></li>
+                            <li><a href="#"><i class="fa fa-folder-open"> CONSULTER</i></a></li>
+                            <li><a href="#"><i class="fa fa-permission"> Autorisation</i></a></li>
+                            <li><a href="#"><i class="fa fa-phone"> Nous Contacter</i></a></li>
+                        </ul>
+            
+                    </div> 
+                    <div class="col-6 col-md ">
+                        <h2>Contact Us</h2>
+                        <p>
+                            24 Block D <br>
+                            UN, Ngaoundéré<br>
+                            Cameroon<br>
+                            <strong>Phone:</strong>+2372366337<BR>
+                            <strong>Email:</strong>website@email.com<br>
+                        </p>
+                    </div>
+                    <div class="col-6 col-md ">
+                        <h2>Follow Us</h2>
+                        <p>S'il vous plait veuillez nous suivre sur les reseux soiaux :</p>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <div class="col-6 col-md ">
+                        <h2>Our Newsletter</h2>
+                        <p></p>
+                        <form accept="" method="POST">
+                            <input type="email" name="email" class="form-control">
+                            <a type="submit" class="btn btn-primary" value="Subscribe" href="">envoyer</a> 
+                        </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    
 
 
     <script href="/These/public/js/bootstrap.min.js"></script>

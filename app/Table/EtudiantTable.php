@@ -5,10 +5,10 @@ namespace App\Table; // here we define the namespace of the class App
 use Core\Table\Table; // Import the Table class
 
 
-class PostTable extends Table
+class EtudiantTable extends Table
 {
 
-    protected $table = 'articles';
+    protected $table = 'etudiant';
 
     /**
      * Get the last articles
@@ -22,11 +22,8 @@ class PostTable extends Table
     public function last()
     {
         return $this->query("
-            SELECT articles.id, articles.titre, articles.contenu, categories.titre as categorie
-            FROM articles 
-            LEFT JOIN categories 
-                ON category_id = categories.id
-            ORDER BY articles.date DESC
+            SELECT *
+            FROM etudiant 
         ");
     }
 
