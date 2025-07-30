@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
-use App\Controller\AppController;
+namespace App\Controller;
 use Core\HTML\BootstrapForm;   
 use Core\Auth\DbAuth;
 use App;
@@ -14,7 +13,7 @@ class UsersController extends AppController
         if (!empty($_POST)) {
             $auth = new DbAuth(\App::getInstance()->getDb());
             if ($auth->login($_POST['username'], $_POST['password'])){
-                header(('Location:  index.php?p=admin.posts.index'));
+                header(('Location:  index.php?p=admin.etablissement.index'));
             }
             else {
                 $errors = true;

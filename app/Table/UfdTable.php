@@ -9,10 +9,10 @@ use Core\Table\Table; // Import the Table class
  * CategoryTable class
  */
 
-class CategoryTable extends Table
+class UfdTable extends Table
 {
     
-    protected $table = 'categories';  // the name of the table in the database
+    protected $table = 'ufd';  // the name of the table in the database
 
 
 

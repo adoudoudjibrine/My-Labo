@@ -41,7 +41,7 @@ class MysqlDatabase extends Database
     {
         // if the pdo is not set, we create a new one
         if ($this->pdo === null) {
-            $pdo = new \PDO('mysql:dbname=bdthese1_1;host=localhost', 'root', '');
+            $pdo = new \PDO('mysql:dbname=these;host=localhost', 'root', '');
             $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo; // 
         } // 

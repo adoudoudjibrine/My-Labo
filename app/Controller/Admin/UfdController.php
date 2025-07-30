@@ -5,56 +5,58 @@ namespace App\Controller\Admin;
 use Core\HTML\BootstrapForm;
 use App;  
 
-class CategoriesController extends AppController
+class UfdController extends AppController
 {
     public function __construct()
     {
         parent::__construct(); 
-        $this->loadModel('Category'); 
+        $this->loadModel('Ufd'); 
     }
 
     public function index(){
-        $items = $this->Category->all();
-        $this->render('admin.categories.index', compact('items'));
+        $items = $this->Ufd->all();
+        $this->render('admin.ufd.index', compact('items'));
     }
 
     public function add(){
     
         if (!empty($_POST)){
-            $result = $this->Category->create([
-                'titre' => $_POST['titre']
+            $result = $this->Ufd->create([
+                'intitule' => $_POST['intitule'],
+                'code' => $_POST['code']
             ]);
             return $this->index();
 
         }
         $form = new BootstrapForm($_POST); 
-        $this->render('admin.categories.edit', compact('form'));
+        $this->render('admin.ufd.edit', compact('form'));
     }
 
     public function edit(){
 
         if (!empty($_POST)){
-            $result = $this->Category->update(
+            $result = $this->Ufd->update(
                 $_GET['id'],[
-                'titre' => $_POST['titre']]
-            );
+                'intitule' => $_POST['intitule'],
+                'code' => $_POST['code']
+            ]);
             
             return $this->index();
         }
 
-        $category = $this->Category->find($_GET['id']);
-        if (!$category) {
+        $Ufd = $this->Ufd->find($_GET['id']);
+        if (!$Ufd) {
             $this->notFound();
         }
 
-        $form = new BootstrapForm($category); 
-        $this->render('admin.categories.edit', compact('form'));
+        $form = new BootstrapForm($Ufd); 
+        $this->render('admin.ufd.edit', compact('form'));
 
     }
 
     public function delete(){
         if (!empty($_POST)){
-            $result = $this->Category->delete(
+            $result = $this->Ufd->delete(
                 $_POST['id']
             );
 
@@ -62,7 +64,7 @@ class CategoriesController extends AppController
                return $this->index();
             ?>
                 <div class="m-4 alert alert-success">
-                    L'article a bien été supprimé !
+                    L'Ufd a bien été supprimé !
                 </div>
             <?php
 

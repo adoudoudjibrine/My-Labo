@@ -24,28 +24,16 @@ if (!$auth->logged()) { // here we check if the user is not logged in
 ob_start(); // here we start the output buffer
 // here we start the output buffer
 if($page === 'home') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/articles/index.php'; // here we include the file home.php
+    require ROOT . '/pages/admin/etablissement/index.php'; // here we include the file home.php
 } 
-else if($page === 'posts.edit') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/articles/edit.php'; // here we include the file home.php
+else if($page === 'etablissement.edit') { // here we check if the value of the parameter p is home
+    require ROOT . '/pages/admin/etablissement/edit.php'; // here we include the file home.php
 }
-else if($page === 'posts.add') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/articles/add.php'; // here we include the file home.php
+else if($page === 'etablissement.add') { // here we check if the value of the parameter p is home
+    require ROOT . '/pages/admin/etablissement/add.php'; // here we include the file home.php
 }
-else if($page === 'posts.delete') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/articles/delete.php'; // here we include the file home.php
-}
-else if($page === 'categories.index') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/categories/index.php'; // here we include the file home.php
-} 
-else if($page === 'categories.edit') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/categories/edit.php'; // here we include the file home.php
-}
-else if($page === 'categories.add') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/categories/add.php'; // here we include the file home.php
-}
-else if($page === 'categories.delete') { // here we check if the value of the parameter p is home
-    require ROOT . '/pages/admin/categories/delete.php'; // here we include the file home.php
+else if($page === 'etablissement.delete') { // here we check if the value of the parameter p is home
+    require ROOT . '/pages/admin/etablissement/delete.php'; // here we include the file home.php
 }
 else {
     App::getInstance()->notFound(); // here we call the notFound method of the App class

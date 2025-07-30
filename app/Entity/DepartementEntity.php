@@ -11,7 +11,7 @@ use Core\Entity\Entity;
  * It extends the Entity class
  **/
 
-class EtudiantEntity extends Entity
+class DepartementEntity extends Entity
 {
 	/**
 	 * getUrl() function 
@@ -22,7 +22,7 @@ class EtudiantEntity extends Entity
 
     public function getUrl()
 	{
-		return 'index.php?p=etudiant.show&id=' . $this->id;
+		return 'index.php?p=departement.show&id=' . $this->id;
 	}
 
 	/**
@@ -34,7 +34,7 @@ class EtudiantEntity extends Entity
 	 */
 	public function getExtrait()
 	{
-		$html = '<p>' . substr($this->lieu_de_naissance, 0, 9) . '... </p>';
+		$html = '<p>' . substr($this->description, 0, 20) . '... </p>';
 		return $html;
 	}
 

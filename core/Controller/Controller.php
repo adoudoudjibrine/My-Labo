@@ -4,7 +4,7 @@ namespace Core\Controller;
 
 class Controller
 {
-    public $title = "Mon Supper Site"; // Title of the blog
+    public $title = "Gestion des Theses"; // Title of the blog
 
     protected $viewPath;
     protected $template;
