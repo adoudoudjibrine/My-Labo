@@ -10,6 +10,7 @@
             <th>ID</th>
             <th>Intitule</th>
             <th>Code</th>
+            <th>Etablissement</th>
             <th>Description</th>
             <th>Actions</th>
         </tr>
@@ -20,6 +21,7 @@
                 <td><?= $departement->id ?></td>
                 <td><?= $departement->intitule ?></td>
                 <td><?= $departement->code ?></td>
+                <td><?= $departement->etablissement_id ?></td>
                 <td><?= $departement->extrait ?></td>
                 <td>
                     <a href="?p=admin.departement.edit&id=<?= $departement->id ?>" class="btn btn-primary">Modifier</a>

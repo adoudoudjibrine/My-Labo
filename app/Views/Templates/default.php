@@ -47,40 +47,31 @@ use App\App;
     
         <div class="row">
             
-            <div class="col-3 m-3">
+            <div class="col-3 m-4">
                 <!--aside-->
                 <div class="list-group">
-
-                    <a href="#" class="list-group-item list-group-item-action active">Aimeriez vous signalez une perte?  <i class=" icon-chevron-right icon-red offset3"></i></a>
-                    <a href="#" class="list-group-item list-group-item-action">Objet ayant été rettouvé<i class=" icon-chevron-right icon-blue offset5"></i></a>
-                    <a href="#" class="list-group-item list-group-item-action">Nos meilleur agents pouv vous aidé!!<i class=" icon-chevron-right offset3"></i> </a>
-                    <a href="#"class="list-group-item list-group-item-action">Commentaires clients satisfaients..<i class=" icon-chevron-right offset3"></i></a>
-                    <a href="#"class="list-group-item list-group-item-action">Rejoindre notre communauté?<i class=" icon-chevron-right offset4"></i></a>
-                </div>
-                <div class="login-form">
-                    <h1 class="title">login here</h1>
-                    <form>
-                        <label>Username</label>
-                        <input type="text" >
-                        <label>Password</label>
-                        <input type="password">
-                        <input type="checkbox" >     
-                        <label>Remember me</label>         
-                        <button class="btn btn-primary ">login </button>
-                    </form>
+                    <a href="?p=admin.etudiant.index" class=" m-1 btn list-group-item list-group-item-action ">
+                        Etudiant
+                    </a>
+                    <a href="?p=admin.ufd.index" class=" m-1 btn list-group-item list-group-item-action ">
+                        UFD
+                    </a>
+                    <a href="?p=admin.etablissement.index" class=" m-1 btn list-group-item list-group-item-action">
+                        Etablissement
+                    </a>
+                    <a href="?p=admin.departement.index" class=" m-1 btn list-group-item list-group-item-action">
+                        Departement
+                    </a>
+                    <a href="?p=admin.parcours.index" class=" m-1 btn list-group-item list-group-item-action ">
+                        Parcours
+                    </a>
                 </div>
             </div>  
-            <div class="col-7">
-                <div class="starter-template" style="padding: 10px;">
+            <div class="col-8">
+                <div class="starter-template" style="padding: 5 px;">
                     <?= $content ?>
                 </div>
             </div>
-            <div class="col-2 ">
-                <label for="find">RECHERCHER</label>
-                <input class="form-control" id="search" type="text" placeholder="Search..">
-                <br>
-            </div>
-
         </div>
         <footer class="pt-4 my-md-5 pt-md-5  text-white bg-dark border-top">
             <div class="row">

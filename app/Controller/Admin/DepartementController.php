@@ -35,7 +35,7 @@ class DepartementController extends AppController
         $this->loadModel('Etablissement');
         $etablissements = $this->Etablissement->extract('id','intitule','code');
         $form = new BootstrapForm($_POST); 
-        $this->render('admin.departement.index', compact('form', 'etablissements'));
+        $this->render('admin.departement.edit', compact('form', 'etablissements'));
     }
 
     public function edit(){
@@ -48,7 +48,9 @@ class DepartementController extends AppController
                 'etablissement_id' => $_POST['etablissement_id'],
                 'description' => $_POST['description']
             ]);
-            
+
+            return $this->index();
+
         }
 
         $this->loadModel('Etablissement');
@@ -59,7 +61,7 @@ class DepartementController extends AppController
         }
 
         $form = new BootstrapForm($departement); 
-        return $this->index();
+        $this->render('admin.departement.edit', compact('form','etablissements'));
 
     }
 

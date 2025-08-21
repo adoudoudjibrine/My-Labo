@@ -4,18 +4,17 @@ namespace App\Controller;
 
 use App;
 
-class EtudiantController extends AppController
+class HomeController extends AppController
 {
     public function __construct()
     {
         parent::__construct(); // Call the parent constructor to set up the view path
-        $this->loadModel('Etudiant'); // Load the Post model
     }
 
     public function index()
     {
-        $etudiant = $this->Etudiant->last();
-        $this->render('etudiant.index', compact('etudiant'));
+
+        $this->render('home.index');
     }
 
     public function create()

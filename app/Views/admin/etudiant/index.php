@@ -1,5 +1,9 @@
+<h1 class="title">Administrer les Etudiants </h1>
 
-<h1> LISTE DES ETUDIANTS </h1>
+<p>
+    <a href="?p=admin.etudiant.add" class="btn btn-success">Ajouter</a>
+</p>
+
 <table class="table table-striped table-hover">
 
     <thead>
@@ -16,6 +20,7 @@
             <th>Sexe</th>
             <th>Email</th>
             <th>Telephone</th>
+            <th>Actions</th>
         </tr>     
     </thead>        
     <tbody>
@@ -33,6 +38,13 @@
                 <td><?= $etudiant->sexe; ?></td>
                 <td><?= $etudiant->email; ?></td>
                 <td><?= $etudiant->telephone; ?></td>
+                <td>
+                    <a href="?p=admin.etudiant.edit&id=<?= $etudiant->id ?>" class="btn btn-primary">Modifier</a>
+                    <form action="?p=admin.etudiant.delete" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= $etudiant->id ?>" />
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach;?>
     </tbody>
