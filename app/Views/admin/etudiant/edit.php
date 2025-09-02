@@ -15,14 +15,14 @@
     </div>
    
     <div class="col-12">
-        <?= $form->input('etablissement_id', 'Etablissement de l\'etudiant', $etablissements); ?>
+        <?= $form->select('etablissement_id', 'Etablissement de l\'etudiant', $etablissements); ?>
     </div>
 
     <div class="col-md-6">
-        <?= $form->input('departement_id', 'Departement de l\'etudiant', $departements); ?>
+        <?= $form->select('departement_id', 'Departement de l\'etudiant', $departements); ?>
     </div>
     <div class="col-md-6">
-        <?= $form->input('parcours_id', 'Parcours de l\'etudiant', $parcours); ?>
+        <?= $form->select('parcours_id', 'Parcours de l\'etudiant', $parcours); ?>
     </div>
 
     <div class="col-md-6">

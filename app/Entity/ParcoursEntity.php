@@ -19,7 +19,13 @@ class ParcoursEntity extends Entity
 
     public function getUrl()
 	{
-		return 'index.php?p=etudiant.parcours&id=' . $this->id;
+		return 'index.php?p=parcours.show&id=' . $this->id; 
+	}
+
+	public function getExtrait()
+	{
+		$html = '<p>' . substr($this->description, 0, 20) . '... </p>';
+		return $html;
 	}
 
 }  

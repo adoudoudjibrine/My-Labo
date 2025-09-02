@@ -20,7 +20,7 @@
             <tr>
                 <td><?= $parcours->id ?></td>
                 <td><?= $parcours->intitule ?></td>
-                <td><?= $parcours->extrait ?></td>
+                <td><?= $parcours->departement_id ?></td>
                 <td><?= $parcours->code ?></td>
                 <td>
                     <a href="?p=admin.parcours.edit&id=<?= $parcours->id ?>" class="btn btn-primary">Modifier</a>

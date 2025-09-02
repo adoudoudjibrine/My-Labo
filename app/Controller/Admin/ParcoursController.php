@@ -31,7 +31,7 @@ class ParcoursController extends AppController
 
         }
         $this->loadModel('Departement');
-        $departements = $this->Departement->extract('id','intitule','code','etablissement_id', 'description');
+        $departements = $this->Departement->extract('id','intitule','code', 'etablissement_id', 'description');
         $form = new BootstrapForm($_POST); 
         $this->render('admin.parcours.edit', compact('form', 'departements'));
     }
@@ -42,19 +42,23 @@ class ParcoursController extends AppController
             $result = $this->Parcours->update(
                 $_GET['id'],[
                 'intitule' => $_POST['intitule'],
-                'code' => $_POST['code']
+                'code' => $_POST['code'],
+                'departement_id' => $_POST['departement_id'],
+                'description' => $_POST['description']
             ]);
             
             return $this->index();
         }
 
-        $Parcours = $this->Parcours->find($_GET['id']);
-        if (!$Parcours) {
+        $this->loadModel('Departement');
+        $parcours = $this->Parcours->find($_GET['id']);
+        $departements = $this->Departement->extract('id','intitule','code', 'departement_id', 'description');
+        if (!$parcours) {
             $this->notFound();
         }
 
-        $form = new BootstrapForm($Parcours); 
-        $this->render('admin.parcours.edit', compact('form'));
+        $form = new BootstrapForm($parcours); 
+        $this->render('admin.parcours.edit', compact('form', 'departements'));
 
     }
 
